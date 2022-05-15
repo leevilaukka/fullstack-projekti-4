@@ -1,4 +1,4 @@
-export default {
+const storage ={
     push: function (key, value) {
         const keys = JSON.parse(localStorage.getItem(key)) || [];
 
@@ -10,3 +10,5 @@ export default {
         localStorage.setItem(key, JSON.stringify(keys));
     }
 }
+
+export default storage;

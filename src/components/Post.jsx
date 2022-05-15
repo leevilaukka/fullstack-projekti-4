@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { api } from '../api'
 import { PostComments } from './PostComments'
 import { CommentForm } from './forms/CommentForm'

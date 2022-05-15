@@ -22,7 +22,7 @@ export const EditContainer = ({id, post}) => {
 
     React.useEffect(() => {
         checkCanEdit()
-    }, [id])
+    })
 
   return (
     canEdit ? (
