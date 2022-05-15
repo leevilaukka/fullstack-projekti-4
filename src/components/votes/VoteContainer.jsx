@@ -11,11 +11,10 @@ export const VoteContainer = ({source, type}) => {
   }, [source])
 
   return (
-    <div className='justify-items-end'>
+    <div className='flex flex-row'>
         <VoteButton source={source} sourceType={type} upOrDown={"up"} votes={votes} setVotes={setVotes}/>
         <VoteCounter votes={votes} />
         <VoteButton source={source} sourceType={type} upOrDown={"down"} votes={votes} setVotes={setVotes}/>
-        
     </div>
   )
 }

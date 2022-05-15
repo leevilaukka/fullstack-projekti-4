@@ -7,6 +7,8 @@ export const CommentForm = ({postID, comments, setComments}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    if(!content) return alert('Kommentti ei voi olla tyhjä')
+
     api.comments.create({
       content,
       post: postID
@@ -17,12 +19,9 @@ export const CommentForm = ({postID, comments, setComments}) => {
   }
   
   return (
-    <div className='flex justify-center pt-4'>
-      
-        <label htmlFor="content">Content</label>
-        <textarea required id="content" value={content} onChange={(e) => setContent(e.target.value)}></textarea>
-        <button onClick={handleSubmit} type="button">Submit</button>
-     
+    <div className='flex'>
+        <textarea required id="content" className='text-dark ml-5' placeholder='Kirjoita jotain...'  rows={2} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+        <button className='bg-black ml-5 p-4 rounded' onClick={handleSubmit} type="button">Submit</button>
     </div>
   )
 }

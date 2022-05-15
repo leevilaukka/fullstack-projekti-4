@@ -27,15 +27,16 @@ export const EditContainer = ({id, post}) => {
   return (
     canEdit ? (
         <div>
-            <button onClick={() => setShowEdit(!showEdit)}><h4>Edit</h4></button>
+            <button className="bg-zinc-700 p-2 m-1 rounded" onClick={() => setShowEdit(!showEdit)}><h4>Muokkaa</h4></button>
             <button
+                className='bg-red-700 p-2 m-1 rounded'
                 onClick={() => {
-                    window.confirm('Are you sure you want to delete this post?') && api.posts.delete(id, editCode).then(() => {
+                    window.confirm('Haluatko varmasti poistaa?') && api.posts.delete(id, editCode).then(() => {
                         // go to posts list 
                         window.location.href = '/'
                     })
                 }}
-            ><h4>Delete</h4></button>
+            ><h4>Poista</h4></button>
             {showEdit ? <EditPost id={id} editCode={editCode} post={post}/> : null}
         </div>
     ) : null

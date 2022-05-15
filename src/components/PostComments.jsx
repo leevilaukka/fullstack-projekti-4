@@ -12,6 +12,10 @@ export const PostComments = ({comments}) => {
             {comments.map(comment => (
                 <Comment key={comment._id} comment={comment} />
             ))}
+            {
+                comments.length === 0 &&
+                <p>Ei kommentteja</p>
+            }
         </div>
     )
 }

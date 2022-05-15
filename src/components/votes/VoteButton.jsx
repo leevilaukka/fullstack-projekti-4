@@ -29,10 +29,21 @@ export const VoteButton = ({
         }
     }
 
+    const getIcon = () => {
+        switch (upOrDown) {
+            case 'up':
+                return "👍"
+            case 'down':
+                return "👎"
+            default:
+                return "👍"
+        }
+    }
+
 
     return (
         <button onClick={submitLike}>
-            Vote {upOrDown}
+            {getIcon()}
         </button>
     )
 }

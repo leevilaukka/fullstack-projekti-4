@@ -30,12 +30,16 @@ export const Post = () => {
             {post ? (
                 <div>
                     <div className='rounded-lg p-5 m-5 bg-zinc-800'>
-                        <h1>{post.title}</h1>
+                        <b>{post.title}</b>
                         <p>{post.content}</p>
                         <VoteContainer source={post} type="posts" />
                         <EditContainer id={post._id} post={post}/>
                     </div>
+                    <div className='flex justify-center'>
+                    <b>Lähetä kommentti</b>
                     <CommentForm postID={post._id} setComments={setComments} comments={comments}/>
+                    </div>
+                   
                     <div className='rounded-lg p-5 m-5'>
                         <PostComments comments={comments} />        
                     </div>

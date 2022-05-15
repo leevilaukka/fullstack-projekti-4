@@ -8,6 +8,10 @@ export const PostForm = ({ posts, setPosts }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        if(!title || !content) {
+            return alert('Täytä kaikki kentät')
+        }
+
         api.posts.create({
             title,
             content
