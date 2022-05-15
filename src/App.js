@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { PostList } from './components/PostList';
+import { Post } from './components/Post';
+
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { TopBar } from './components/TopBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-dark min-h-screen text-slate-50'>
+      <BrowserRouter>
+        <TopBar/>
+          <Routes>
+            <Route path={"/"} element={<PostList/>}/>
+            <Route path={"/post/:id"} element={<Post/>}/>
+          </Routes>
+      </BrowserRouter>  
     </div>
+  
   );
 }
 
