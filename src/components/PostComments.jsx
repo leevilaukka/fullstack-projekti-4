@@ -13,8 +13,7 @@ export const PostComments = ({comments}) => {
                 <Comment key={comment._id} comment={comment} />
             ))}
             {
-                comments.length === 0 &&
-                <p>Ei kommentteja</p>
+                comments.length === 0 && <p>Ei kommentteja</p>
             }
         </div>
     )

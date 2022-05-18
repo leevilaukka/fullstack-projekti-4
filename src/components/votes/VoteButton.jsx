@@ -19,10 +19,10 @@ export const VoteButton = ({
 
         switch (upOrDown) {
             case 'up':
-                setVotes(votes ? votes + 1 : 0);
+                setVotes(votes ? votes + 1 : 1);
                 break;
             case 'down':
-                setVotes(votes ? votes - 1 : 0)
+                setVotes(votes ? votes - 1 : -1)
                 break
             default:
                 break
